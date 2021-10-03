@@ -19,7 +19,8 @@ const Nav = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background: #ffffff;   
+    background: #ffffff;  
+    width: 100%; 
 `
 
 const Logo = styled.a`

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components' 
+import Api from '../services/api'
 
 function Search(){
     const [city, setCity] = useState('')
@@ -7,30 +8,37 @@ function Search(){
         setCity(a.target.value)
     }
 
-    const [country, setCountry] = useState('')
+    const [countrycode, setCountryCode] = useState('')
     const handleOnChangeCountry = (e) => {
-        setCountry(e.target.value)
+        setCountryCode(e.target.value)
     }
+
+    const searchWeather = async () => {
+        await Api(city, countrycode)
+    }
+    // function searchWeather(){
+    //     Api(city, countrycode)
+    // }
+
 
     return(
         <SearchArea>
             <form>
                 <div className="form--input">
-                    <label for="city">Busque por uma cidade:</label>
+                    <label htmlFor="city">Busque por uma cidade:</label>
                     <input type="city" id="city" name="city"  onChange={handleOnChangeCity} value={city}/>
                 </div>
 
                 <div className="form--input">
-                    <label for="country">País:</label>
-                    <input type="text" id="country" name="country"  onChange={handleOnChangeCountry} value={country}/>
+                    <label htmlFor="country">País:</label>
+                    <input type="text" id="country" name="country"  onChange={handleOnChangeCountry} value={countrycode}/>
                 </div>
-
+                <BtnDefault type="submit" onClick={searchWeather}> Pesquisar </BtnDefault>
             </form>
         </SearchArea>
     );
 }
 
-//<BtnDefault type="submit" onClick={createUser}> Comece agora! </BtnDefault>
 export default Search
 
 const SearchArea = styled.div`
@@ -60,5 +68,28 @@ const SearchArea = styled.div`
                 border: 1px solid #ffcc02;
             }
         }
+    }
+`
+const BtnDefault = styled.button`
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0px;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: 0.4s;
+    background-color: #148bce;
+    color: #fff;
+    &:hover { 
+        background-color: #ffcc02;
+        color: #148bce;
+    }
+    .center{
+        text-align: center;
+        width: 100%;
     }
 `
