@@ -90,7 +90,7 @@ const HistoryArea = styled.div`
     max-width: 300px;
     margin: auto;
     margin-top: 20px;  
-    text-align: left;
+    text-align: center;
     border-radius: 5px;
 
 
