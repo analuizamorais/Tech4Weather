@@ -7,7 +7,7 @@ export const apiWeather = async (city) => {
   if(!city){
     return {}
   }
-  //PASSAR SÓ O CONST 10-17 NO BACK, passar o response no return la debaixo {no espaço: salvamento no banco etc} descobir jeito de pegar a cidade algo tipo req.query
+  
   const response = await axios.get(URL, {
     params: {
       q: city,
