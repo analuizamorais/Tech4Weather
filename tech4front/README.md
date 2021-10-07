@@ -1,19 +1,9 @@
 <div id="top"></div>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 <br />
 <div align="center">
-    <img src="assets/Tech4Weather.png" alt="Tech4Weather" width="200" height="auto">
 
-
-  <h3 align="center">Tech4Humans</h3>
+  <h1 align="center">Tech4Humans</h1>
 
   <p align="center">
     A weather application!
